@@ -49,6 +49,7 @@ export default class Scene extends Component {
   render() {
     // 'rest' can contain additional properties that you can flow through to canvas:
     // (id, className, etc.)
+    // eslint-disable-next-line
     const { width, height, ...rest } = this.props;
 
     const opts = {}
