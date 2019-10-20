@@ -3,10 +3,7 @@ import "./personalInfo.css"
 
 import Image from '../image'
 
-const JOB_DATA = {
-  name: 'PINKDROIDS',
-  url: 'https://www.pinkdroids.com'
-}
+import { JOB_DATA } from '../constants'
 
 const PersonalInfo = () => {
   return (
