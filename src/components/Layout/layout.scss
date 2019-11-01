@@ -1,4 +1,3 @@
-@import url('../vars.scss');
 @import '../vars.scss';
 
 html {
@@ -21,7 +20,7 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
 
 h1 {
   font-family: 'Rubik', sans-serif;
-  color: var(--color-title);
+  color: $color-title;
   font-size: calc(2.5rem + 0.7 * ((100vw - 30rem) / 60));
   line-height: calc(2.5rem + 0.7 * ((100vw - 30rem) / 45));
   margin: 20px 0;
@@ -29,7 +28,7 @@ h1 {
 
 h3 {
   font-family: 'Rubik', sans-serif;
-  color: var(--color-title);
+  color: $color-title;
   font-weight: 500;
   font-size: calc(1.1rem + 0.2 * ((100vw - 30rem) / 60));
   margin-bottom: 20px;
@@ -37,18 +36,19 @@ h3 {
 
 p {
   font-family: 'Noto Sans', sans-serif;
-  color: var(--color-title);
+  color: $color-title;
   font-size: calc(0.95rem + 0.05 * ((100vw - 30rem) / 60));
 }
 
 a {
   text-decoration: none;
   cursor: pointer;
-  color: var(--color-primary);
+  color: $color-primary;
 }
 
 a:hover {
   font-weight: 700;
+  color: $color-primary;
 }
 
 a:active {
