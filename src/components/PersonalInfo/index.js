@@ -31,7 +31,7 @@ const PersonalInfo = () => {
         <div className="separator"></div>
         <p>
           Thank you for visiting my site! <br/><br/>
-          If you would connect with me, share ideas or view my work, please click on
+          If you would like to connect, share ideas or view my work, please click on
           a corresponding 3D icon and <b>lets build something great together</b>.
         </p>
         <button className="toggle-overlay-button" onClick={handleClick}>Explore →</button>

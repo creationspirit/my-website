@@ -13,26 +13,31 @@ class Scene extends React.Component {
       name: 'linkedin',
       position: new BABYLON.Vector3(3, 2, 1),
       scaling: new BABYLON.Vector3(0.3, 0.3, 0.3),
+      rotationSpeed: 0.004
     },
     {
       name: 'facebook',
       position: new BABYLON.Vector3(-3, 3, 2),
       scaling: undefined,
+      rotationSpeed: 0.004
     },
     {
       name: 'gmail',
       position: new BABYLON.Vector3(-2, 1.5, -1),
       scaling: new BABYLON.Vector3(0.5, 0.5, 0.5),
+      rotationSpeed: 0.004
     },
     {
       name: 'github',
       position: new BABYLON.Vector3(2, 1, -2),
       scaling: new BABYLON.Vector3(15, 15, 15),
+      rotationSpeed: 0.004
     },
     {
       name: 'cv',
       position: new BABYLON.Vector3(0, 3, 0),
       scaling: new BABYLON.Vector3(0.5, 0.5, 0.5),
+      rotationSpeed: 0.004
     }
   ]
 
@@ -77,6 +82,7 @@ class Scene extends React.Component {
     meshTask.onSuccess = task => {
       this.meshes[config.name] = task.loadedMeshes[0]
       this.meshes[config.name].position = config.position
+      this.meshes[config.name].rotationSpeed = config.rotationSpeed
       if (config.scaling) {
         this.meshes[config.name].scaling = config.scaling
       }
@@ -90,6 +96,24 @@ class Scene extends React.Component {
           BABYLON.ActionManager.OnPickTrigger,
           () => {
             this.linkRefs[config.name].current.click()
+          },
+        )
+      )
+      actionMesh.actionManager.registerAction(
+        new BABYLON.ExecuteCodeAction(
+          BABYLON.ActionManager.OnPointerOverTrigger,
+          () => {
+            this.meshes[config.name].position.y += 0.03
+            this.meshes[config.name].rotationSpeed += 0.01
+          },
+        )
+      )
+      actionMesh.actionManager.registerAction(
+        new BABYLON.ExecuteCodeAction(
+          BABYLON.ActionManager.OnPointerOutTrigger,
+          () => {
+            this.meshes[config.name].position.y -= 0.03
+            this.meshes[config.name].rotationSpeed -= 0.01
           },
         )
       )
@@ -112,8 +136,6 @@ class Scene extends React.Component {
     this.camera.lowerRadiusLimit = 16
     this.camera.upperRadiusLimit = 40
     this.camera.fovMode = BABYLON.Camera.FOVMODE_HORIZONTAL_FIXED;
-    // this.camera.useBouncingBehavior = true;
-    // camera.useAutoRotationBehavior = true;
     this.camera.attachControl(canvas, true);
     this.updateCameraFocus()
 
@@ -148,7 +170,7 @@ class Scene extends React.Component {
 
       scene.registerBeforeRender(() => {
         Object.keys(this.meshes).forEach(key => {
-          this.meshes[key].rotation.y += 0.003;
+          this.meshes[key].rotation.y += this.meshes[key].rotationSpeed;
         })
       });
 
