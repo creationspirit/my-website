@@ -13,31 +13,31 @@ class Scene extends React.Component {
       name: 'linkedin',
       position: new BABYLON.Vector3(3, 2, 1),
       scaling: new BABYLON.Vector3(0.3, 0.3, 0.3),
-      rotationSpeed: 0.004
+      rotationSpeed: 0.0035
     },
     {
       name: 'facebook',
       position: new BABYLON.Vector3(-3, 3, 2),
       scaling: undefined,
-      rotationSpeed: 0.004
+      rotationSpeed: 0.0035
     },
     {
       name: 'gmail',
       position: new BABYLON.Vector3(-2, 1.5, -1),
       scaling: new BABYLON.Vector3(0.5, 0.5, 0.5),
-      rotationSpeed: 0.004
+      rotationSpeed: 0.0035
     },
     {
       name: 'github',
       position: new BABYLON.Vector3(2, 1, -2),
       scaling: new BABYLON.Vector3(15, 15, 15),
-      rotationSpeed: 0.004
+      rotationSpeed: 0.0035
     },
     {
       name: 'cv',
       position: new BABYLON.Vector3(0, 3, 0),
       scaling: new BABYLON.Vector3(0.5, 0.5, 0.5),
-      rotationSpeed: 0.004
+      rotationSpeed: 0.0035
     }
   ]
 
@@ -86,9 +86,7 @@ class Scene extends React.Component {
       if (config.scaling) {
         this.meshes[config.name].scaling = config.scaling
       }
-      if (config.name === 'gmail') {
 
-      }
       const actionMesh = config.name === 'gmail' ? task.loadedMeshes[2] : task.loadedMeshes[0]
       actionMesh.actionManager = new BABYLON.ActionManager(scene);
       actionMesh.actionManager.registerAction(
