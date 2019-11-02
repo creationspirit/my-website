@@ -2,7 +2,7 @@ import React from "react"
 import * as BABYLON from 'babylonjs';
 
 import BabylonScene from './BabylonScene'
-import './scene.css'
+import './scene.scss'
 import { GMAIL_LINK, GITHUB_PROFILE_LINK, FACEBOOK_PROFILE_LINK, LINKEDIN_PROFILE_LINK } from '../constants'
 
 import Resume from '../../assets/andrija_perusic_resume.pdf'
@@ -122,12 +122,14 @@ class Scene extends React.Component {
     light.shadowMaxZ = 20;
     light.intensity = 0.7;
 
-
     var generator = new BABYLON.ShadowGenerator(512, light);
     generator.usePoissonSampling = true;
 
     const assetsManager = new BABYLON.AssetsManager(scene);
+    assetsManager.useDefaultLoadingScreen = false;
     this.meshesConfig.forEach(config => this.addMeskImportTask(config, assetsManager, scene))
+
+    assetsManager.onProgress = (remainingCount, totalCount) => this.props.onProgress(remainingCount, totalCount)
 
     assetsManager.onFinish = () => {
       Object.keys(this.meshes).forEach(key => {
@@ -155,6 +157,8 @@ class Scene extends React.Component {
               scene.render();
           }
       });
+
+      this.props.onLoaded()
     }
     assetsManager.load()
   }

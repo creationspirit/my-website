@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Andrija Perusic personal websitesite`,
+        name: `Andrija Perusic personal website`,
         short_name: `Andrija's site`,
         start_url: `/`,
         background_color: `#663399`,
