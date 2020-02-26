@@ -160,6 +160,7 @@ class Scene extends React.Component {
         skyboxSize: 1500,
         groundShadowLevel: 0.5,
         enableGroundMirror: true,
+        environmentTexture: undefined,
       });
 
       helper.setMainColor(new BABYLON.Color3(2.8, 2.8, 2.8));

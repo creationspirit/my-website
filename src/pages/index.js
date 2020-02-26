@@ -11,9 +11,9 @@ const IndexPage = () => {
 
   const onLoaded = () => {
     // Opacity needs to be transitioned and then we remove element from DOM
-    const wrapper = document.getElementById('loading-screen')
-    wrapper.classList.toggle('loading-screen-hidden')
-    setTimeout(() => setLoaded(true), 1600)
+    // const wrapper = document.getElementById('loading-screen')
+    // wrapper.classList.toggle('loading-screen-hidden')
+    // setTimeout(() => setLoaded(true), 1600)
   }
 
   const onProgress = (remainingCount, totalCount) => {
@@ -31,7 +31,8 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Welcome" />
-      { !loaded && <LoadingScreen /> }
+      {/* { !loaded && <LoadingScreen /> } */}
+      <LoadingScreen />
       <Scene onLoaded={onLoaded} onProgress={onProgress}/>
       <PersonalInfo />
     </Layout>
