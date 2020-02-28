@@ -1,7 +1,7 @@
 import React from "react"
 import "./personalInfo.scss"
 
-import Image from '../image'
+import ProfileImage from './profileImage'
 
 import { JOB_DATA } from '../constants'
 
@@ -21,7 +21,7 @@ const PersonalInfo = () => {
         onClick={handleClick}
       />
       <div id="personal-info-wrapper" className="personal-info">
-        <Image/>
+        <ProfileImage />
         <h1>Hi there!</h1>
         <h3>
           <span>I'm Andrija Perušić,<br/>
@@ -32,7 +32,7 @@ const PersonalInfo = () => {
         <p>
           Thank you for visiting my site! <br/><br/>
           If you would like to connect, share ideas or view my work, please click on
-          a corresponding 3D icon and <b>lets build something great together</b>.
+          a corresponding object and <b>lets build something great together</b>.
         </p>
         <button className="toggle-overlay-button" onClick={handleClick}>Explore →</button>
       </div>

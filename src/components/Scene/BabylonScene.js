@@ -1,7 +1,8 @@
-import * as BABYLON from 'babylonjs';
-import React, { Component } from 'react';
+import { Engine } from '@babylonjs/core/Engines/engine'
+import { Scene } from '@babylonjs/core/scene'
+import React from 'react';
 
-export default class Scene extends Component {
+export default class BabylonScene extends React.Component {
   scene = null
   engine = null
   canvas = React.createRef()
@@ -17,14 +18,14 @@ export default class Scene extends Component {
   }
 
   componentDidMount() {
-    this.engine = new BABYLON.Engine(
+    this.engine = new Engine(
       this.canvas.current,
       true,
       this.props.engineOptions,
       this.props.adaptToDeviceRatio
     )
 
-    this.scene = new BABYLON.Scene(this.engine);
+    this.scene = new Scene(this.engine);
 
     this.props.onSceneMount({
       scene: this.scene,
@@ -32,7 +33,6 @@ export default class Scene extends Component {
       canvas: this.canvas.current,
     });
 
-    // Resize the babylon engine when the window is resized
     window.addEventListener('resize', this.onResizeWindow)
   }
 
@@ -43,10 +43,7 @@ export default class Scene extends Component {
   }
 
   render() {
-    // 'rest' can contain additional properties that you can flow through to canvas:
-    // (id, className, etc.)
-    // eslint-disable-next-line
-    const { width, height, ...rest } = this.props;
+    const { width, height } = this.props;
 
     const opts = {}
     if (width !== undefined && height !== undefined) {

@@ -7,8 +7,8 @@ const LoadingScreen = () => {
       <div className="lds-dual-ring">
         <div className="loading-progress" id="loading-screen-progress">0%</div>
       </div>
-      <p className="loading-message" id="loading-screen-message">
-        Loading some assets. Please wait a moment.
+      <p className="loading-message">
+        Loading assets
       </p>
     </div>
   )
