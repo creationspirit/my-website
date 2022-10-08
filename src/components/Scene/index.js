@@ -16,28 +16,27 @@ import BabylonScene from './BabylonScene'
 import './scene.scss'
 import { GMAIL_LINK, GITHUB_PROFILE_LINK, FACEBOOK_PROFILE_LINK, LINKEDIN_PROFILE_LINK } from '../constants'
 
-import Resume from '../../assets/andrija_perusic_resume.pdf'
 import BackgroundImage from '../../images/backgroundGround.png'
 
 class SceneComponent extends React.Component {
   meshesConfig = [
     {
       name: 'linkedin',
-      position: new Vector3(3, 2, 1),
+      position: new Vector3(-2, 1.5, -1),
       scaling: new Vector3(0.3, 0.3, 0.3),
       rotationSpeed: 0.0035,
       boxSize: { width: 1.6, height: 1.6, depth: 0.5 }
     },
     {
       name: 'facebook',
-      position: new Vector3(-3, 3, 2),
+      position: new Vector3(3, 2, 1),
       scaling: undefined,
       rotationSpeed: 0.0035,
       boxSize: { width: 1.6, height: 1.6, depth: 0.5 }
     },
     {
       name: 'gmail',
-      position: new Vector3(-2, 1.5, -1),
+      position: new Vector3(0, 3, 0),
       scaling: new Vector3(0.5, 0.5, 0.5),
       rotationSpeed: 0.0035,
       boxSize: { width: 2, height: 1.6, depth: 0.5 }
@@ -49,13 +48,6 @@ class SceneComponent extends React.Component {
       rotationSpeed: 0.0035,
       boxSize: { width: 1.9, height: 1.9, depth: 0.5 }
     },
-    {
-      name: 'cv',
-      position: new Vector3(0, 3, 0),
-      scaling: new Vector3(0.5, 0.5, 0.5),
-      rotationSpeed: 0.0035,
-      boxSize: { width: 1.6, height: 2.2, depth: 0.5 }
-    }
   ]
 
   meshes = {}
@@ -199,7 +191,6 @@ class SceneComponent extends React.Component {
     return (
       <>
         <BabylonScene onSceneMount={this.onSceneMount} adaptToDeviceRatio={true} />
-        <a ref={this.linkRefs.cv} className="hidden" target="_blank" rel="noopener noreferrer" href={Resume}>Resume</a>
         <a ref={this.linkRefs.linkedin} className="hidden" target="_blank" rel="noopener noreferrer" href={LINKEDIN_PROFILE_LINK}>Linkedin</a>
         <a ref={this.linkRefs.gmail} className="hidden" href={GMAIL_LINK}>Gmail</a>
         <a ref={this.linkRefs.facebook} className="hidden" target="_blank" rel="noopener noreferrer" href={FACEBOOK_PROFILE_LINK}>Facebook</a>

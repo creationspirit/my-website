@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Scene from "../components/Scene"
 import PersonalInfo from "../components/PersonalInfo"
 import LoadingScreen from "../components/LoadingScreen"
@@ -25,7 +25,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <SEO title="Welcome" />
+      <Seo title="Welcome" />
       { !loaded && <LoadingScreen /> }
       <Scene onLoaded={onLoaded} onProgress={onProgress}/>
       <PersonalInfo />
