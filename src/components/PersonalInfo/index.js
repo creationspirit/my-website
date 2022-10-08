@@ -25,14 +25,15 @@ const PersonalInfo = () => {
         <h1>Hi there!</h1>
         <h3>
           <span>I'm Andrija Perušić,<br/>
-          Software engineer @ </span>
+          Principal Software Engineer @ </span>
           <a target="_blank" rel="noopener noreferrer" href={JOB_DATA.url}>{JOB_DATA.name}</a>
         </h3>
+        <p>Tech Lead for BMW's next-gen Android Automotive OS based infotainment systems connectivity apps.</p>
         <div className="separator"></div>
         <p>
           Thank you for visiting my site! <br/><br/>
           If you would like to connect, share ideas or view my work, please click on
-          a corresponding object and <b>lets build something great together</b>.
+          a corresponding object and let's build something great together.
         </p>
         <button className="toggle-overlay-button" onClick={handleClick}>Explore →</button>
       </div>

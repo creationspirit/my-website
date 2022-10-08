@@ -1,11 +1,14 @@
 module.exports = {
   siteMetadata: {
     title: `Andrija Perušić`,
-    description: `View Andrija Perušić's website and connect, view projects or download resume.`,
+    description: `View Andrija Perušić's website, explore and connect!`,
     author: `Andrija Perušić`,
+    siteUrl: `https://andrijaperusic.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -13,13 +16,11 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Andrija Perušić's website`,
+        short_name: `Andrija website`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

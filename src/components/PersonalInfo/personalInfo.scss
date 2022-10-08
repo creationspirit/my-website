@@ -20,11 +20,10 @@
   .profile-photo {
     border-radius: 50%;
     opacity: 0.95;
-    max-width: 130px;
-    max-height: 130px;
-    height: calc(90px + 40 * ((100vw - 300px) / 700));
-    width: calc(90px + 40 * ((100vw - 300px) / 700));
-    border: 3px solid #2d2c3a;
+    max-width: 200px;
+    max-height: 200px;
+    height: calc(90px + 50 * ((100vw - 300px) / 700));
+    width: calc(90px + 50 * ((100vw - 300px) / 700));
   }
 
   .separator {

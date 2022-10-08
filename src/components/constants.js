@@ -4,6 +4,6 @@ export const FACEBOOK_PROFILE_LINK = 'https://www.facebook.com/andrija.perusic'
 export const GMAIL_LINK = 'mailto:aperusic18@gmail.com'
 
 export const JOB_DATA = {
-    name: 'PINKDROIDS',
-    url: 'https://www.pinkdroids.com'
+    name: 'BMW Group',
+    url: 'https://www.bmwgroup.com/en.html'
   }
